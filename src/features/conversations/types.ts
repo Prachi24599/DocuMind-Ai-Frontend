@@ -1,6 +1,6 @@
 export interface ConversationRecord {
   id: string;
   title: string;
-  documentNames: string[];
+  documentIds: string[];
   updatedAt: string;
 }
