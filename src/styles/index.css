@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #19191f;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #19191f;
+  background: #f7f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #7657e8;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .nav-link {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-400 transition-colors hover:bg-white/[0.06] hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply bg-white/[0.09] text-white;
+  }
+
+  .icon-button {
+    @apply inline-grid h-9 w-9 shrink-0 place-items-center rounded-lg text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600;
+  }
+
+  .input-control {
+    @apply h-10 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-100;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-violet-600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
