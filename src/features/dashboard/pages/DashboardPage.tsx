@@ -51,7 +51,7 @@ export default function DashboardPage() {
           </div>
           <Link to="/documents" className="inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 text-xs font-semibold text-violet-700 hover:bg-violet-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500">View all <ArrowRight size={14} aria-hidden="true" /></Link>
         </div>
-        <DocumentList documents={documents} onRemove={removeDocument} compact />
+        <DocumentList documents={documents} onRemove={removeDocument} onUpload={() => setUploadOpen(true)} compact />
       </section>
 
       <section className="mt-6 flex flex-col gap-4 rounded-2xl border border-violet-100 bg-[#f5f2ff] p-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
