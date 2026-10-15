@@ -25,7 +25,7 @@ export default function DocumentsPage() {
             <p className="mt-1 text-xs text-slate-500">{documents.length} sample {documents.length === 1 ? 'file' : 'files'}</p>
           </div>
         </div>
-        <DocumentList documents={documents} onRemove={removeDocument} />
+        <DocumentList documents={documents} onRemove={removeDocument} onUpload={() => setUploadOpen(true)} />
       </section>
       <UploadDialog open={uploadOpen} onClose={() => setUploadOpen(false)} />
     </>
